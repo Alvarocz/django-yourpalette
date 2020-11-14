@@ -6,7 +6,7 @@ from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 
 
-class HexColorWidget(forms.TextArea):
+class HexColorWidget(forms.TextInput):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
