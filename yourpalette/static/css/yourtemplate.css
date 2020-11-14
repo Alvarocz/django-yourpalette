@@ -1,0 +1,62 @@
+.yp-container {
+  background-color: #1b1b1c;
+}
+
+.yp-container h1 {
+  color: white;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.yp-container ul {
+  display: flex;
+  background-color: #1b1b1c;
+}
+
+.yp-container header h1 {
+  text-align: center;
+}
+
+.yp-swatch {
+  width: 18.57%;
+  background-color: #3c3b3d;
+  border-radius: 5px;
+  float: left;
+  margin: 0 20px 20px 0;
+  overflow: hidden;
+}
+
+.yp-swatch-sample {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.yp-sample {
+  flex: 1;
+  padding: 6.5em 0;
+}
+
+.yp-swatch-info {
+  padding: 1em;
+  color: #808080;
+  text-align: center;
+}
+
+.yp-swatch .yp-swatch-info p:first-child {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.yp-swatch .yp-swatch-info p {
+    font-size: 0.85rem;
+    margin-bottom: .75em;
+}
+
+.yp-swatch .yp-swatch-info input[type="color"] {
+  width: 100%;
+  border: 1px solid gray;
+  background-color: #3c3b3d;
+}

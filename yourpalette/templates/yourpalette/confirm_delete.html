@@ -1,0 +1,9 @@
+<p>
+  ¿Está seguro que quiere eliminar '{{ object }}'?
+</p>
+<p>
+  <form action="{{ request.path }}">
+    {% csrf_token %}
+    <input type="submit" value="Confirmar">
+  </form>
+</p>
