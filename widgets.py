@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.utils import flatatt
 from django.forms.widgets import get_default_renderer
-from django.utils.encondig import force_str
+from django.utils.encoding import force_str
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 
