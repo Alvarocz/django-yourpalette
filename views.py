@@ -23,7 +23,7 @@ class YourPaletteMixin(ContextMixin):
 
 class ColorPaletteListView(ListView, YourPaletteMixin):
     queryset = ColorPalette.objects.order_by('created_at')
-    template_name = 'yourpalette/index.pug'
+    template_name = 'yourpalette/list.pug'
     model = ColorPalette
 
 
