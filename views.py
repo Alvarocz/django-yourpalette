@@ -23,18 +23,18 @@ class YourPaletteMixin(ContextMixin):
 
 class ColorPaletteListView(ListView, YourPaletteMixin):
     queryset = ColorPalette.objects.order_by('created_at')
-    template_name = 'yourpalette/list.pug'
+    template_name = 'yourpalette/list.html'
     model = ColorPalette
 
 
 class ColorPaletteDetailView(DetailView, YourPaletteMixin):
     model = ColorPalette
-    template_name = 'yourpalette/detail.pug'
+    template_name = 'yourpalette/detail.html'
 
 
 class ColorPaletteCreateView(LoginRequiredMixin, YourPaletteMixin, CreateView):
     model = ColorPalette
-    template_name = 'yourpalette/form.pug'
+    template_name = 'yourpalette/form.html'
     form_class = ColorPaletteForm
 
     def get_context_data(self, **kwargs):
@@ -45,7 +45,7 @@ class ColorPaletteCreateView(LoginRequiredMixin, YourPaletteMixin, CreateView):
 
 class ColorPaletteUpdateView(LoginRequiredMixin, YourPaletteMixin, UpdateView):
     model = ColorPalette
-    template_name = 'yourpalette/form.pug'
+    template_name = 'yourpalette/form.html'
     form_class = ColorPaletteForm
 
     def get_context_data(self, **kwargs):
