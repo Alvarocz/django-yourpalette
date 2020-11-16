@@ -1,0 +1,48 @@
+{% extends base_template %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/yourtemplate.css' %}">
+{% endblock %}
+
+{% block title %}
+  Paletas de color
+{% endblock %}
+
+{% block content %}
+  {% if object_list %}
+    <table>
+      <thead>
+        <th>
+          <td>Paleta</td>
+          <td>Muestra</td>
+        </th>
+      </thead>
+      <tbody>
+        {% for paleta in object_list %}
+        <tr>
+          <td>
+            <a href="{% url 'yourpalette-detail' paleta.id %}">
+              Paleta {{ paleta.id }}
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <table>
+      <thead>
+        <th>
+          <td>Paleta</td>
+          <td>Muestra</td>
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>No hay resultados</p></td>
+        </tr>
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}
