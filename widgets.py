@@ -22,6 +22,7 @@ class HexColorWidget(forms.TextInput):
                 'yourpalette/widget.html',
                 {
                     'type': 'color',
+                    'name': name,
                     'value': conditional_escape(force_str(value)),
                     'class': 'color-input',
                     'id': 'id_'+name,
