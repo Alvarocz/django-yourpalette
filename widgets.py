@@ -15,7 +15,7 @@ class HexColorWidget(forms.TextInput):
             renderer = get_default_renderer()
         if value is None:
             value = ""
-        final_attrs = self.build_attrs(self.attrs, attrs, name=name)
+        final_attrs = self.build_attrs(self.attrs, attrs)
         
         return mark_safe(
             renderer.render(
