@@ -11,7 +11,6 @@ class HexColorField(models.CharField):
     def __init__(self, *args, **kwargs):
         self.dark = "#f0f0f0"
         self.light = "#f0f0f0"
-        kwargs['default'] = "#FFFFFF"
         kwargs['max_length'] = 7
         super().__init__(*args, **kwargs)
 
