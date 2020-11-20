@@ -19,7 +19,7 @@ class HexColorWidget(forms.TextInput):
         
         return mark_safe(
             renderer.render(
-                'yourtemplate/widget.html',
+                'yourpalette/widget.html',
                 {
                     'type': 'color',
                     'value': conditional_escape(force_str(value)),
