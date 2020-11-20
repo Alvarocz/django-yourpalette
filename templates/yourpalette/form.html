@@ -1,3 +1,11 @@
+{% extends base_template %}
+
+{% block title %}
+  {% if action == 'new' %} Nueva
+  {% else %} Editar
+  {% endif %} paleta
+{% endblock %}
+
 <div class="yp-container">
   <header>
     <h1>SELECTOR DE COLORES</h1>
