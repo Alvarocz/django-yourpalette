@@ -17,7 +17,7 @@ class StylesheetHandlerView(DetailView):
     template_name = ''
 
     def get(self, request, *args, **kwargs):
-        paleta = ColorPalette.objects.get(pk=kwargs{'pk'})
+        paleta = ColorPalette.objects.get(pk=kwargs['pk'])
         stylesheet = """
             .yp-bg-white {
               background-color: {{ white }};
