@@ -16,5 +16,4 @@ class HexColorField(models.CharField):
 
 class HexColorFormField(forms.fields.CharField):
     def __init__(self, *args, **kwargs):
-        kwargs['max_length'] = 7
-        super().__init__(self, *args, **kwargs)
+        super().__init__(self, 7, *args, **kwargs)
