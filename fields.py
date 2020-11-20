@@ -15,5 +15,5 @@ class HexColorField(models.CharField):
 
 
 class HexColorFormField(forms.fields.CharField):
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
