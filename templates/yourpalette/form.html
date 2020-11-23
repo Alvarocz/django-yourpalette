@@ -36,7 +36,8 @@
                 <p class="color-display" data-color-name="{{ name }}">
                   {{ field.1 }}
                 </p>
-                <input type="color" name="{{ name }}" id="id_{{ name }}" class="color-input">
+                <input type="color" name="{{ name }}" value="{{ field.1 }}"
+                       id="id_{{ name }}" class="color-input">
               </div>
             </li>
           {% endfor %}
