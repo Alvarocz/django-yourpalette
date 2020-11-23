@@ -3,6 +3,7 @@ from django.views.generic.base import ContextMixin
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.utils.translation import gettext as _
 from django.http import FileResponse
 from django.conf import settings
 from django.shortcuts import render
@@ -177,10 +178,10 @@ class ColorPaletteCreateView(YourPaletteMixin, CreateView):
         fields = []
         for group in colors:
             fields.append(
-                {color:(form.fields[color].dark,
-                        form.fields[color].initial,
-                        form.fields[color].light,
-                        form.fields[color]) for color in group}
+                {_(color):(form.fields[color].dark,
+                           form.fields[color].initial,
+                           form.fields[color].light,
+                           form.fields[color]) for color in group}
             )
         context['action'] = 'new'
         context['fields'] = fields

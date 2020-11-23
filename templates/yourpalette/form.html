@@ -1,6 +1,5 @@
 {% extends base_template %}
 {% load static %}
-{% load i18n %}
 
 {% block title %}
   {% if action == 'new' %} Nueva
@@ -32,7 +31,7 @@
                 <div class="yp-sample light" style="background: {{ field.2 }}"></div>
               </div>
               <div class="yp-swatch-info">
-                <p>{% translate name|upper %}</p>
+                <p>{{ name|upper }}</p>
                 <p class="color-display" data-color-name="{{ name }}">
                   {{ field.3 }}
                 </p>
