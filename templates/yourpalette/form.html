@@ -43,6 +43,48 @@
           {% endfor %}
           {% endwith %}
         </div>
+        <div class="row expanded">
+          {% with fields.1 as group2 %}
+          {% for name,field in group2.items %}
+            <li class="yp-swatch">
+              <div class="yp-swatch-sample">
+                <div class="yp-sample dark" style="background: {{ field.0 }}"></div>
+                <div class="yp-sample normal" style="background: {{ field.1 }}"></div>
+                <div class="yp-sample light" style="background: {{ field.2 }}"></div>
+              </div>
+              <div class="yp-swatch-info">
+                <p>{% translate name|upper %}</p>
+                <p class="color-display" data-color-name="{{ name }}">
+                  {{ field.1 }}
+                </p>
+                <input type="color" name="{{ name }}" value="{{ field.1 }}"
+                       id="id_{{ name }}" class="color-input">
+              </div>
+            </li>
+          {% endfor %}
+          {% endwith %}
+        </div>
+        <div class="row expanded">
+          {% with fields.2 as group3 %}
+          {% for name,field in group3.items %}
+            <li class="yp-swatch">
+              <div class="yp-swatch-sample">
+                <div class="yp-sample dark" style="background: {{ field.0 }}"></div>
+                <div class="yp-sample normal" style="background: {{ field.1 }}"></div>
+                <div class="yp-sample light" style="background: {{ field.2 }}"></div>
+              </div>
+              <div class="yp-swatch-info">
+                <p>{% translate name|upper %}</p>
+                <p class="color-display" data-color-name="{{ name }}">
+                  {{ field.1 }}
+                </p>
+                <input type="color" name="{{ name }}" value="{{ field.1 }}"
+                       id="id_{{ name }}" class="color-input">
+              </div>
+            </li>
+          {% endfor %}
+          {% endwith %}
+        </div>
       </ul>
     </form>
     {% endwith %}
