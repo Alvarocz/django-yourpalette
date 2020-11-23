@@ -19,8 +19,8 @@ class ColorPalette(models.Model):
     extra3 = HexColorField(default="#0cfc82")
     extra4 = HexColorField(default="#0cfc4c")
     extra5 = HexColorField(default="#fc0c4c")
-    light_factor = models.IntegerField(default="10")
-    dark_factor = models.IntegerField(default="10")
+    light_factor = models.IntegerField(default=10)
+    dark_factor = models.IntegerField(default=10)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
 
