@@ -8,8 +8,12 @@ class ColorPaletteForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for name in self.fields.keys():
+            default = ColorPalette._meta.get_field(name).default
             self.fields[name] = HexColorFormField(
-                initial=ColorPalette._meta.get_field(name).default)
+                initial=default,
+                dark=darken(default),
+                light=lighten(default)
+            )
 
     class Meta:
         model = ColorPalette

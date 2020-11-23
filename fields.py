@@ -18,4 +18,10 @@ class HexColorField(models.CharField):
 class HexColorFormField(forms.fields.CharField):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.dark = "#f0f0f0"
+        self.light = "#f0f0f0"
+        if 'dark' in kwargs:
+            self.dark = kwargs['dark']
+        if 'light' in kwargs:
+            self.light = kwargs['light']
         self.widget = HexColorWidget()
