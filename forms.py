@@ -19,10 +19,6 @@ class ColorPaletteForm(forms.ModelForm):
                 dark=darken(default, dark_factor),
                 light=lighten(default, light_factor)
             )
-            print('')
-            print(self.fields[name].dark)
-            print(self.fields[name].initial)
-            print(self.fields[name].light)
 
     class Meta:
         model = ColorPalette

@@ -15,6 +15,8 @@ def rgb2hex(rgb):
 
 
 def darken(string, amount):
+    if string == "#000000":
+        return string
     rgb = hex2rgb(string)
     new_r = rgb[0] - rgb[0]*(amount/100)
     new_g = rgb[1] - rgb[1]*(amount/100)
@@ -27,6 +29,8 @@ def darken(string, amount):
 
 
 def lighten(string, amount):
+    if string.lower() == "#ffffff":
+        return string
     rgb = hex2rgb(string)
     new_r = rgb[0] + rgb[0]*(amount/100)
     new_g = rgb[1] + rgb[1]*(amount/100)
