@@ -9,7 +9,6 @@
 }
 
 .yp-container ul {
-  display: flex;
   background-color: #1b1b1c;
 }
 
@@ -18,10 +17,9 @@
 }
 
 .yp-swatch {
-  width: 18.57%;
+  flex: 1;
   background-color: #3c3b3d;
   border-radius: 5px;
-  float: left;
   margin: 0 20px 20px 0;
   overflow: hidden;
 }
