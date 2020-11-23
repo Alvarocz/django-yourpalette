@@ -1,7 +1,7 @@
 from django import forms
 
 from .models import ColorPalette
-from .widgets import HexColorWidget
+from .fields import HexColorFormField
 
 
 class ColorPaletteForm(forms.ModelForm):
