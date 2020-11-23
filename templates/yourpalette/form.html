@@ -10,7 +10,8 @@
   <header>
     <h1>SELECTOR DE COLORES</h1>
   </header>
-  <form action="{% url 'yourpalette-'+action %}" method="post">
+  {% with 'yourpalette-'|add:action as path %}
+  <form action="{% url path %}" method="post">
     <ul>
       <li class="yp-swatch">
         <div class="yp-swatch-sample">
@@ -194,4 +195,5 @@
       </li>
     </ul>
   </form>
+  {% endwith %}
 </div>
