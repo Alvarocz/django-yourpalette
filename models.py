@@ -4,7 +4,7 @@ from .fields import HexColorField
 
 
 class ColorPalette(models.Model):
-    white = HexColorField()
+    white = HexColorField(default="#FFFFFF")
     black = HexColorField(default="#000000")
     gray = HexColorField(default="#FAFAFA")
     red = HexColorField(default="#f14242")
