@@ -10,6 +10,8 @@ class ColorPaletteForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for name in self.fields.keys():
             default = ColorPalette._meta.get_field(name).default
+            if type(default) is int:
+                break
             dark_factor = ColorPalette._meta.get_field('dark_factor').default
             light_factor = ColorPalette._meta.get_field('light_factor').default
             self.fields[name] = HexColorFormField(
