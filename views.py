@@ -2,7 +2,7 @@ from django.views.generic import ListView
 from django.views.generic.base import ContextMixin
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.http import FileResponse
 from django.conf import settings
 from django.shortcuts import render
@@ -115,7 +115,7 @@ class StylesheetHandlerView(DetailView):
         return response
 
 
-class YourPaletteMixin(ContextMixin):
+class YourPaletteMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if hasattr(settings, 'YOURPALETTE_BASE_TEMPLATE'):
@@ -125,18 +125,21 @@ class YourPaletteMixin(ContextMixin):
         return context
 
 
-class ColorPaletteListView(ListView, YourPaletteMixin):
+class ColorPaletteListView(YourPaletteMixin, ListView):
+    permission_required = 'yourpalette.can_view_colorpalette'
     queryset = ColorPalette.objects.order_by('created_at')
     template_name = 'yourpalette/list.html'
     model = ColorPalette
 
 
-class ColorPaletteDetailView(DetailView, YourPaletteMixin):
+class ColorPaletteDetailView(YourPaletteMixin, DetailView):
+    permission_required = 'yourpalette.can_view_colorpalette'
     model = ColorPalette
     template_name = 'yourpalette/detail.html'
 
 
-class ColorPaletteCreateView(LoginRequiredMixin, YourPaletteMixin, CreateView):
+class ColorPaletteCreateView(YourPaletteMixin, CreateView):
+    permission_required = 'yourpalette.can_add_colorpalette'
     model = ColorPalette
     template_name = 'yourpalette/form.html'
     form_class = ColorPaletteForm
@@ -147,7 +150,8 @@ class ColorPaletteCreateView(LoginRequiredMixin, YourPaletteMixin, CreateView):
         return context
 
 
-class ColorPaletteUpdateView(LoginRequiredMixin, YourPaletteMixin, UpdateView):
+class ColorPaletteUpdateView(YourPaletteMixin, UpdateView):
+    permission_required = 'yourpalette.can_change_colorpalette'
     model = ColorPalette
     template_name = 'yourpalette/form.html'
     form_class = ColorPaletteForm
@@ -158,7 +162,8 @@ class ColorPaletteUpdateView(LoginRequiredMixin, YourPaletteMixin, UpdateView):
         return context
 
 
-class ColorPaletteDeleteView(LoginRequiredMixin, YourPaletteMixin, DeleteView):
+class ColorPaletteDeleteView(YourPaletteMixin, DeleteView):
+    permission_required = 'yourpalette.can_delete_colorpalette'
     model = ColorPalette
     success_url = reverse_lazy('yourpalette')
 

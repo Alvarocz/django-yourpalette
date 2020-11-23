@@ -11,6 +11,11 @@
 {% endblock %}
 
 {% block content %}
+  {% if perms.yourpalette.can_add_colorpalette %}
+    <a class="button success" href="{% url 'yourpalette-new' %}">
+      Nueva paleta
+    </a>
+  {% endif %}
   <table>
     <thead>
       <tr>
