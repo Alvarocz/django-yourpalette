@@ -7,9 +7,9 @@ from .widgets import HexColorWidget
 class ColorPaletteForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for name,field in self.fields.items():
-            field = HexColorFormField()
-            field.initial = ColorPalette._meta.get_field(name).default
+        for name in self.fields.keys():
+            self.fields[name] = HexColorFormField(
+                initial=ColorPalette._meta.get_field(name).default)
 
     class Meta:
         model = ColorPalette
