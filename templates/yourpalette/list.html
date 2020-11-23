@@ -5,6 +5,11 @@
   Paletas de color
 {% endblock %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/yourtemplate.css' %}">
+{% endblock %}
+
 {% block content %}
   {% if perms.yourpalette.can_add_colorpalette %}
     <a class="button success" href="{% url 'yourpalette-new' %}">
