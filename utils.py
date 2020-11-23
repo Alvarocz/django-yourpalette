@@ -23,7 +23,7 @@ def darken(string, amount):
     if new_r < 0: new_r = 0
     if new_g < 0: new_g = 0
     if new_b < 0: new_b = 0
-    return rgb2hex((new_r, new_g, new_b))
+    return rgb2hex((int(new_r), int(new_g), int(new_b)))
 
 
 def lighten(string, amount):
@@ -35,5 +35,5 @@ def lighten(string, amount):
     if new_r > 255: new_r = 255
     if new_g > 255: new_g = 255
     if new_b > 255: new_b = 255
-    return rgb2hex((new_r, new_g, new_b))
+    return rgb2hex((int(new_r), int(new_g), int(new_b)))
 
