@@ -29,7 +29,13 @@
             </div>
             <div class="yp-swatch-info">
               <p>BLANCO</p>
-              <p class="color-display" data-color-name="white">{{ form.white.value }}</p>
+              <p class="color-display" data-color-name="white">
+                {% if action == 'new' %}
+                  {{ form.white.initial }}
+                {% else %}
+                  {{ form.white.value }}
+                {% endif %}
+              </p>
               {{ form.white }}
             </div>
           </li>
