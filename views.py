@@ -144,10 +144,11 @@ class ColorPaletteCreateView(YourPaletteMixin, CreateView):
     template_name = 'yourpalette/form.html'
     form_class = ColorPaletteForm
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        print(kwargs)
-        return kwargs
+#    def get_form_kwargs(self):
+#        kwargs = super().get_form_kwargs()
+#        if kwargs['instance'] == None:
+#            
+#        return kwargs
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
