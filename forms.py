@@ -2,6 +2,7 @@ from django import forms
 
 from .models import ColorPalette
 from .fields import HexColorFormField
+from .utils import darken, lighten
 
 
 class ColorPaletteForm(forms.ModelForm):
