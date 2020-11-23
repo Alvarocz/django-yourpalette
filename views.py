@@ -121,7 +121,7 @@ class YourPaletteMixin(LoginRequiredMixin, PermissionRequiredMixin, ContextMixin
         if hasattr(settings, 'YOURPALETTE_BASE_TEMPLATE'):
             context['base_template'] = settings.YOURPALETTE_BASE_TEMPLATE
         else:
-            context['base_template'] = 'yourtemplate/base/base.html'
+            context['base_template'] = 'yourpalette/base/base.html'
         return context
 
 
