@@ -8,17 +8,21 @@ from .utils import darken, lighten
 class ColorPaletteForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        dark_factor = ColorPalette._meta.get_field('dark_factor').default
+        light_factor = ColorPalette._meta.get_field('light_factor').default
         for name in self.fields.keys():
             default = ColorPalette._meta.get_field(name).default
             if type(default) is int:
                 break
-            dark_factor = ColorPalette._meta.get_field('dark_factor').default
-            light_factor = ColorPalette._meta.get_field('light_factor').default
             self.fields[name] = HexColorFormField(
                 initial=default,
                 dark=darken(default, dark_factor),
                 light=lighten(default, light_factor)
             )
+            print('')
+            print(self.fields[name].dark)
+            print(self.fields[name].initial)
+            print(self.fields[name].light)
 
     class Meta:
         model = ColorPalette

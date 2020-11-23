@@ -15,7 +15,6 @@ def rgb2hex(rgb):
 
 
 def darken(string, amount):
-    print(string)
     rgb = hex2rgb(string)
     new_r = rgb[0] - rgb[0]*(amount/100)
     new_g = rgb[1] - rgb[1]*(amount/100)
