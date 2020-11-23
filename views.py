@@ -111,7 +111,7 @@ class StylesheetHandlerView(DetailView):
             }
 
         """
-        response = FileResponse()
+        response = FileResponse(stylesheet)
         return response
 
 
