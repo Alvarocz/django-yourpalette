@@ -22,7 +22,7 @@
     <form action="{% url path %}" method="post">
       <ul>
         <div class="row expanded">
-          {% with fields|index:0 as group1 %}
+          {% with fields.0 as group1 %}
           {% for name,field in group1 %}
             <li class="yp-swatch">
               <div class="yp-swatch-sample">
