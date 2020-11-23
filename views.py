@@ -152,8 +152,38 @@ class ColorPaletteCreateView(YourPaletteMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(context['form'].fields['white'])
+        form = context['form']
+        colors = [
+            [
+                'white',
+                'black',
+                'gray',
+                'red',
+                'green'
+            ], [
+                'blue',
+                'orange',
+                'yellow',
+                'purple',
+                'fuchsia',
+            ], [
+                'extra1',
+                'extra2',
+                'extra3',
+                'extra4',
+                'extra5',
+            ]
+        ]
+        fields = []
+        for group in colors:
+            fields.append(
+                {color:(form.fields[color].dark,
+                        form.fields[color].initial,
+                        form.fields[color].light,
+                        form.fields[color]) for color in group}
+            )
         context['action'] = 'new'
+        context['fields'] = fields
         return context
 
 
