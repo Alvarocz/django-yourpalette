@@ -181,7 +181,7 @@ class ColorPaletteCreateView(YourPaletteMixin, CreateView):
                 {color:(form.fields[color].dark,
                         form.fields[color].initial,
                         form.fields[color].light,
-                        form.fields[color]) for color in group}
+                        form.fields[color].render()) for color in group}
             )
         context['action'] = 'new'
         context['fields'] = fields
