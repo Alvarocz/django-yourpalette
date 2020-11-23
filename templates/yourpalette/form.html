@@ -23,7 +23,7 @@
       <ul>
         <div class="row expanded">
           {% with fields.0 as group1 %}
-          {% for name,field in group1 %}
+          {% for name,field in group1.items %}
             <li class="yp-swatch">
               <div class="yp-swatch-sample">
                 <div class="yp-sample dark" style="background: {{ field.0 }}"></div>
