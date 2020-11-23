@@ -152,7 +152,7 @@ class ColorPaletteCreateView(YourPaletteMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(context['form'].fields['dark'])
+        print(context['form'].white.dark)
         context['action'] = 'new'
         return context
 
