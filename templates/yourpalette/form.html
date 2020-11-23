@@ -18,23 +18,20 @@
       <h1>SELECTOR DE COLORES</h1>
     </header>
     {% with 'yourpalette-'|add:action as path %}
+
     <form action="{% url path %}" method="post">
       <ul>
         <div class="row expanded">
           <li class="yp-swatch">
             <div class="yp-swatch-sample">
-              <div class="yp-sample dark"></div>
-              <div class="yp-sample normal"></div>
-              <div class="yp-sample light"></div>
+              <div class="yp-sample dark" style="background: {{ form.white.dark }}"></div>
+              <div class="yp-sample normal" style="background: {{ form.white.initial }}"></div>
+              <div class="yp-sample light" style="background: {{ form.white.light }}"></div>
             </div>
             <div class="yp-swatch-info">
               <p>BLANCO</p>
               <p class="color-display" data-color-name="white">
-                {% if action == 'new' %}
-                  {{ form.white.initial }}
-                {% else %}
-                  {{ form.white.value }}
-                {% endif %}
+                {{ form.white.initial }}
               </p>
               {{ form.white }}
             </div>
