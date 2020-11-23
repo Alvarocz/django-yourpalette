@@ -33,8 +33,9 @@
               <div class="yp-swatch-info">
                 <p>{{ name|upper }}</p>
                 <p class="color-display" data-color-name="{{ name }}">
-                  {{ field.3 }}
+                  {{ field.1 }}
                 </p>
+                {{ field.3|safe }}
               </div>
             </li>
           {% endfor %}
